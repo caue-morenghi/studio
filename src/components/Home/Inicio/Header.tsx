@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material"
 
 export const Header = () => {
     return (
-        <Box component="header" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1em 2em' }}>
+        <Box component="header" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1em 2em', width: "100%" }}>
 
             <Typography sx={{ fontFamily: "Poppins, sans-serif", color: '#fff', fontWeight: 600 }}>STUDIO AUDIO MAKER</Typography>
 
