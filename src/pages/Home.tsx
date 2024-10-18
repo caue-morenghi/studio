@@ -2,7 +2,13 @@ import { Box } from "@mui/material";
 import { Inicio } from "../components/Home/Inicio/Inicio";
 import { SocialMedia } from "../components/Home/SocialMedia";
 import { Salas } from "../components/Home/Salas/Salas";
-import { LocalizacaoSobre } from "../components/Home/Localizacao/LocalizacaoSobre";
+import { LocalizacaoSobre } from "../components/Home/Localizacao/LocalizacaoSobre"
+import img_studio from "../data/assets/img_studio.jpg";
+import { Sobre } from "../components/Home/Sobre/Sobre";
+import { Horarios } from "../components/Home/Horarios/Horarios";
+import { Servicos } from "../components/Home/Servicos/Servicos";
+import { Agende } from "../components/Home/Servicos/Agende";
+import { Footer } from "../components/Home/Footer";
 
 export const Home = () => {
   return (
@@ -11,6 +17,27 @@ export const Home = () => {
       <SocialMedia />
       <Salas />
       <LocalizacaoSobre />
+
+
+      <Box
+        sx={{
+          height: "100vh",
+          backgroundImage: `url(${img_studio})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          clipPath: "polygon(0 0, 100% 15%, 100% 85%, 0 100%)",
+          mt: -20,
+        }}
+      ></Box>
+
+      <Sobre />
+      <Horarios />
+      <Servicos />
+
+      <Agende />
+
+      <Footer />
     </Box>
   );
 };
+

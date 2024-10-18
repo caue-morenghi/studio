@@ -1,18 +1,20 @@
 import { Box, Typography } from "@mui/material";
 import imagem_central from "../../../data/assets/framemaior.png";
+import img_studio from "../../../data/assets/img_studio.jpg";
 
 export const LocalizacaoSobre = () => {
   return (
     <>
       <Box
         sx={{
-          height: "420vh",
           backgroundImage: `url(${imagem_central})`,
           backgroundSize: "contains",
           backgroundRepeat: "no-repeat",
+          clipPath: "polygon(0 0, 100% 15%, 100% 100%, 0 85%)",
+          padding: "8em",
         }}
       >
-        <Box sx={{ textAlign: "center", paddingTop: "17em" }}>
+        <Box sx={{ textAlign: "center", marginTop: "5em" }}>
           <Typography
             sx={{
               color: "#fff",
@@ -37,7 +39,7 @@ export const LocalizacaoSobre = () => {
             ></iframe>
             <Typography sx={{ fontFamily: "Poppins, sans-serif", color: "#fff", opacity: "0.5", marginTop: "1em" }}>Studio Audio Maker: Rua Raimundo Cirino, 308 - Bairro Planalto, São Bernardo do Campo - SP</Typography>
           </Box>
-        </Box>
+        </Box>  
       </Box>
     </>
   );
