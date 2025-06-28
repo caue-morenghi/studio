@@ -5,7 +5,7 @@ export const Horarios = () => {
   return (
     <Box sx={{
         textAlign: "center",
-        padding: "5em",
+        padding: { xs: "2em", md: "5em" },
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -17,57 +17,57 @@ export const Horarios = () => {
         sx={{
           color: "#fff",
           fontWeight: "600",
-          fontSize: "60px",
+          fontSize: { xs: "38px", md: "45px", lg: "60px" },
           fontFamily: "inherit",
         }}
       >
         HORÁRIOS DE FUNCIONAMENTO
       </Typography>
 
-      <Box sx={{ color: "#fff", display: "flex", gap: "2em", flexDirection: "column" }}>
+      <Box sx={{ color: "#fff", display: "flex", gap: "2em", flexDirection: "column", alignItems: "center" }}>
 
-        <Box sx={{ display: "flex", alignItems: "center", gap: "2em" }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: "2em", flexDirection: { xs: "column", md: "row" } }}>
           <Box sx={{ display: "flex", alignItems: "center", gap: "1em" }}>
             <Alarm sx={{ fontSize: "24px" }}/>
-            <Typography component="span" sx={{ fontSize: "24px", fontWeight: 600, fontFamily: "inherit" }}>Segunda-Feira:</Typography>
+            <Typography component="span" sx={{ fontSize: { xs: "20px", md: "24px" }, fontWeight: 600, fontFamily: "inherit" }}>Segunda-Feira:</Typography>
             <Typography component="span" sx={{ fontFamily: "inherit" }}> 08:00 - 02:00</Typography>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", gap: "1em" }}>
-            <Alarm sx={{ fontSize: "24px" }}/>
-            <Typography component="span" sx={{ fontSize: "24px", fontWeight: 600, fontFamily: "inherit" }}>Terça-Feira:</Typography>
+            <Alarm sx={{ fontSize: { xs: "20px", md: "24px" } }}/>
+            <Typography component="span" sx={{ fontSize: { xs: "20px", md: "24px" }, fontWeight: 600, fontFamily: "inherit" }}>Terça-Feira:</Typography>
             <Typography component="span" sx={{ fontFamily: "inherit" }}> 08:00 - 02:00</Typography>
           </Box>
         </Box>
 
-        <Box sx={{ display: "flex", alignItems: "center", gap: "2em" }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: "2em", flexDirection: { xs: "column", md: "row" } }}>
           <Box sx={{ display: "flex", alignItems: "center", gap: "1em" }}>
-            <Alarm sx={{ fontSize: "24px" }}/>
-            <Typography component="span" sx={{ fontSize: "24px", fontWeight: 600, fontFamily: "inherit" }}>Quartas-Feira:</Typography>
+            <Alarm sx={{ fontSize: { xs: "20px", md: "24px" } }}/>
+            <Typography component="span" sx={{ fontSize: { xs: "20px", md: "24px" }, fontWeight: 600, fontFamily: "inherit" }}>Quartas-Feira:</Typography>
             <Typography component="span" sx={{ fontFamily: "inherit" }}> 08:00 - 02:00</Typography>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", gap: "1em" }}>
-            <Alarm sx={{ fontSize: "24px" }}/>
-            <Typography component="span" sx={{ fontSize: "24px", fontWeight: 600, fontFamily: "inherit" }}>Quintas-Feira:</Typography>
+            <Alarm sx={{ fontSize: { xs: "20px", md: "24px" } }}/>
+            <Typography component="span" sx={{ fontSize: { xs: "20px", md: "24px" }, fontWeight: 600, fontFamily: "inherit" }}>Quintas-Feira:</Typography>
             <Typography component="span" sx={{ fontFamily: "inherit" }}> 08:00 - 02:00</Typography>
           </Box>
         </Box>
 
-        <Box sx={{ display: "flex", alignItems: "center", gap: "2em" }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: "2em", flexDirection: { xs: "column", md: "row" } }}>
           <Box sx={{ display: "flex", alignItems: "center", gap: "1em" }}>
-            <Alarm sx={{ fontSize: "24px" }}/>
-            <Typography component="span" sx={{ fontSize: "24px", fontWeight: 600, fontFamily: "inherit" }}>Sextas-Feira:</Typography>
+            <Alarm sx={{ fontSize: { xs: "20px", md: "24px" } }}/>
+            <Typography component="span" sx={{ fontSize: { xs: "20px", md: "24px" }, fontWeight: 600, fontFamily: "inherit" }}>Sextas-Feira:</Typography>
             <Typography component="span" sx={{ fontFamily: "inherit" }}> 08:00 - 02:00</Typography>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", gap: "1em" }}>
-            <Alarm sx={{ fontSize: "24px" }}/>
-            <Typography component="span" sx={{ fontSize: "24px", fontWeight: 600, fontFamily: "inherit" }}>Sábados:</Typography>
+            <Alarm sx={{ fontSize: { xs: "20px", md: "24px" } }}/>
+            <Typography component="span" sx={{ fontSize: { xs: "20px", md: "24px" }, fontWeight: 600, fontFamily: "inherit" }}>Sábados:</Typography>
             <Typography component="span" sx={{ fontFamily: "inherit" }}> 08:00 - 02:00</Typography>
           </Box>
         </Box>
         
-        <Box sx={{ display: "flex", alignItems: "center", gap: "1em" }}>
-          <Alarm sx={{ fontSize: "24px" }}/>
-          <Typography component="span" sx={{ fontSize: "24px", fontWeight: 600, fontFamily: "inherit" }}>Domingos:</Typography>
+        <Box sx={{ display: "flex", alignItems: "center", gap: "1em", flexDirection: { xs: "row", md: "row" } }}>
+          <Alarm sx={{ fontSize: { xs: "20px", md: "24px" } }}/>
+          <Typography component="span" sx={{ fontSize: { xs: "20px", md: "24px" }, fontWeight: 600, fontFamily: "inherit" }}>Domingos:</Typography>
           <Typography component="span" sx={{ fontFamily: "inherit" }}> 08:00 - 02:00</Typography>
         </Box>
 

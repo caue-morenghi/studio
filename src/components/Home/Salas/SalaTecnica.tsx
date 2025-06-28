@@ -7,8 +7,8 @@ import { Check } from "@mui/icons-material";
 
 export const SalaTecnica = () => {
     return (
-        <Box width="100%" sx={{ padding: "5em", display: "flex" }}>
-            <Box width="50%">
+        <Box width="100%" sx={{ padding: { xs: "1em", md: "5em" }, display: "flex", flexDirection: { xs: "column", md: "row" }, gap: { xs: "2em", md: "0" }, alignItems: "center" }}>
+            <Box sx={{ width: { xs: "100%", md: "50%" }, order: { xs: 1, md: 2 } }}>
                 <Box sx={{ padding: "1.5em", backgroundColor: "#252832", display: "flex", flexDirection: "column" }}>
                     <Box sx={{ display: "flex" }}>
                         <img src={img1} alt="Sala 1" style={{ width: "50%", height: "auto", boxSizing: "border-box" }} />
@@ -21,8 +21,8 @@ export const SalaTecnica = () => {
                 </Box>
             </Box>
 
-            <Box width="50%" sx={{ padding: "3em 5em", color: "#fff", textAlign: "left", display: "flex", gap: "2em", flexDirection: "column" }}>
-                <Typography sx={{ fontWeight: "600", fontSize: "35px", fontFamily: "Poppins, sans-serif",  }}>Sala Técnica (Sala A)</Typography>
+            <Box sx={{ width: { xs: "100%", md: "50%" }, padding: { xs: "1em 2em", md: "3em 5em" }, color: "#fff", textAlign: "left", display: "flex", gap: "2em", flexDirection: "column", order: { xs: 2, md: 1 } }}>
+                <Typography sx={{ fontWeight: "600", fontSize: {xs: "25px", md: "35px"}, fontFamily: "Poppins, sans-serif",  }}>Sala Técnica (Sala A)</Typography>
                 <Box sx={{ display: "flex", gap: "2em" }}>
                     <Box sx={{ display: "flex", alignItems: "center", gap: ".5em" }}>
                         <Check sx={{ color: "#03A9F4" }}/>

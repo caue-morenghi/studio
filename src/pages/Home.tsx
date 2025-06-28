@@ -25,8 +25,12 @@ export const Home = () => {
           backgroundImage: `url(${img_studio})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          clipPath: "polygon(0 0, 100% 15%, 100% 85%, 0 100%)",
-          mt: -20,
+          clipPath: {
+            lg: "polygon(0 0, 100% 15%, 100% 85%, 0 100%)",
+            md: "polygon(0 0, 100% 10%, 100% 90%, 0 100%)",
+            xs: "polygon(0 0, 100% 5%, 100% 95%, 0 100%)"
+          },
+          mt: { xs: -10, md: -22 },
         }}
       ></Box>
 

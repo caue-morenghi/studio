@@ -5,22 +5,22 @@ import img3 from "../../../data/assets/embreve.png";
 
 export const Servicos = () => {
   return (
-    <Box sx={{ textAlign: "center", padding: "5em", display: "flex", gap: "5em", flexDirection: "column", marginBottom: "5em" }}>
+    <Box sx={{ textAlign: "center", padding: "5em", display: "flex", gap: "5em", flexDirection: "column", marginBottom: "5em", alignItems: "center" }}>
       <Typography
         sx={{
           color: "#fff",
           fontWeight: "600",
-          fontSize: "60px",
+          fontSize: { xs: "40px", md: "60px" },
           fontFamily: "Poppins, sans-serif",
         }}
       >
         SERVIÇOS
       </Typography>
 
-      <Box sx={{ display: "flex", justifyContent: "space-around" }}>
-        <img src={img1} alt="" />
-        <img src={img2} alt="" />
-        <img src={img3} alt="" />
+      <Box sx={{ display: "flex", justifyContent: "space-around", alignItems: "center", flexDirection: { xs: "column", md: "row" }, gap: { xs: "2em", md: "0" } }}>
+        <img src={img1} alt="Ensaios" style={{ width: "100%", maxWidth: "300px" }} />
+        <img src={img2} alt="Gravações" style={{ width: "100%", maxWidth: "300px" }} />
+        <img src={img3} alt="Em breve" style={{ width: "100%", maxWidth: "300px" }} />
       </Box>
     </Box>
   );

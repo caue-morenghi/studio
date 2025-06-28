@@ -6,7 +6,6 @@ import { Hero } from "./Hero";
 export const Inicio = () => {
   return (
     <>
-    
       <Box
         sx={{
           backgroundImage: `url(${imagem_central})`,

@@ -7,17 +7,17 @@ import { Check } from "@mui/icons-material";
 
 export const SalaB = () => {
     return (
-        <Box width="100%" sx={{ padding: "5em", display: "flex" }}>
-            <Box width="50%" sx={{ padding: "3em 5em", color: "#fff", textAlign: "left", display: "flex", gap: "2em", flexDirection: "column" }}>
-                <Typography sx={{ fontWeight: "600", fontSize: "35px", fontFamily: "Poppins, sans-serif",  }}>Sala B</Typography>
+        <Box width="100%" sx={{ padding: { xs: "1em", md: "5em" }, display: "flex", flexDirection: { xs: "column", md: "row" }, gap: { xs: "2em", md: "0" }, alignItems: "center" }}>
+            <Box sx={{ width: { xs: "100%", md: "50%" }, padding: { xs: "1em 2em", md: "3em 5em" }, color: "#fff", textAlign: "left", display: "flex", gap: "2em", flexDirection: "column", order: { xs: 1, md: 2 } }}>
+                <Typography sx={{ fontWeight: "600", fontSize: {xs: "25px", md: "35px"}, fontFamily: "Poppins, sans-serif",  }}>Sala B</Typography>
                 <Box sx={{ display: "flex", gap: "2em" }}>
                     <Box sx={{ display: "flex", alignItems: "center", gap: ".5em" }}>
                         <Check sx={{ color: "#03A9F4" }}/>
-                        <Typography sx={{ fontFamily: "Poppins, sans-serif",  }}>Ensaios</Typography>
+                        <Typography sx={{ fontFamily: "Poppins, sans-serif", fontSize: { xs: "15px", md: "16px" } }}>Ensaios</Typography>
                     </Box>
                     <Box sx={{ display: "flex", alignItems: "center", gap: ".5em" }}>
                         <Check sx={{ color: "#03A9F4" }}/>
-                        <Typography sx={{ fontFamily: "Poppins, sans-serif",  }}>Reuniões e Social</Typography>
+                        <Typography sx={{ fontFamily: "Poppins, sans-serif", fontSize: { xs: "15px", md: "16px" } }}>Reuniões e Social</Typography>
                     </Box>
                 </Box>
                 <Typography sx={{ fontFamily: "Poppins, sans-serif",  }}>Utilizada exclusivamente para ensaios, a sala de baixo foi construída em um espaço de Xm2, possibilitando o uso para artistas ou bandas de pequeno a grande porte.</Typography>
@@ -44,8 +44,8 @@ export const SalaB = () => {
                 </button>
             </Box>
 
-            <Box width="50%">
-                <Box sx={{ padding: "1.5em", backgroundColor: "#252832", display: "flex", flexDirection: "column", borderRadius: "10px" }}>
+            <Box sx={{ width: { xs: "100%", md: "50%" }, order: { xs: 2, md: 1 } }}>
+                <Box sx={{ padding: "1.5em", backgroundColor: "#252832", display: "flex", flexDirection: "column" }}>
                     <Box sx={{ display: "flex" }}>
                         <img src={img1} alt="Sala 1" style={{ width: "50%", height: "auto", boxSizing: "border-box" }} />
                         <img src={img2} alt="Sala 2" style={{ width: "50%", height: "auto", boxSizing: "border-box" }} />
