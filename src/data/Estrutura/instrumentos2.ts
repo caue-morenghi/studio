@@ -5,7 +5,8 @@ export const instrumentos: CaixaProps[] = [
     nome: "Guitarra Fender Squier Stratocaster",
     descricao:
       "Guitarra 1",
-    img: "/assets/Estudio/IMG_8717.jpg",
+    // img: "/assets/Estudio/IMG_8717.jpg",
+    img: "/assets/Estudio/ney.jpeg",
   },
   {
     nome: "Guitarra Tagima Vulcan",
