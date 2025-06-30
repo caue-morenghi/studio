@@ -32,7 +32,7 @@ export const Hero = () => {
       <Typography
         sx={{ fontSize: { xs: "14px", md: "17px" }, color: "#B4BABC" }}
       >
-        Desde 1998 com os espaços perfeitos para o seu som
+        Desde 2002 com os espaços perfeitos para o seu som
       </Typography>
       <Typography
         sx={{

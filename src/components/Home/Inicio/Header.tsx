@@ -17,7 +17,7 @@ import {
 import { useState } from "react";
 import { ListItemLink } from "./ListItemLink";
 import { Link } from "react-router-dom";
-import logo from "../../../data/assets/logoazul.png"
+import logo from "../../../data/assets/logoazul.png";
 
 export const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -34,14 +34,14 @@ export const Header = () => {
       setDrawerOpen(open);
     };
 
-    const menuItems = [
-      { nome: "Início", link: "inicio" },
-      { nome: "Estrutura", link: "estrutura" },
-      { nome: "Ensaios e Gravações", link: "ensaiosegravacoes" },
-      { nome: "Preços", link: "precos" },
-      { nome: "Clientes", link: "clientes" },
-      { nome: "Instrumentos", link: "instrumentos" },
-    ];
+  const menuItems = [
+    { nome: "Início", link: "/" },
+    { nome: "Estrutura", link: "estrutura" },
+    { nome: "Ensaios e Gravações", link: "ensaiosegravacoes" },
+    { nome: "Preços", link: "precos" },
+    { nome: "Clientes", link: "clientes" },
+    { nome: "Instrumentos", link: "instrumentos" },
+  ];
 
   return (
     <Box
@@ -64,8 +64,8 @@ export const Header = () => {
           alignItems: "center",
         }}
       >
-        <Box component="img" src={logo} height="40px"/>
-        STUDIO AUDIO MAKER
+        <Box component="img" src={logo} height="40px" />
+        AUDIO MAKER
       </Typography>
 
       <Box component="nav" sx={{ display: { xs: "none", md: "block" } }}>
@@ -81,8 +81,21 @@ export const Header = () => {
           }}
         >
           {menuItems.map((item) => (
-            <Link to={`${item.link}`} style={{ textDecoration: "none", color: "#fff" }}>
-              <li key={item.link}>{item.nome}</li>
+            <Link
+              to={`${item.link}`}
+              style={{ textDecoration: "none", color: "#fff" }}
+            >
+              <li
+                key={item.link}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.color = "#03A9F4"; // cor ao passar o mouse
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.color = "#fff"; // cor original
+                }}
+              >
+                {item.nome}
+              </li>
             </Link>
           ))}
         </ul>
@@ -98,10 +111,20 @@ export const Header = () => {
           }}
         >
           <li>
-            <WhatsApp />
+            <Link
+              to="https://wa.me/5511963139042"
+              style={{ textDecoration: "none", color: "#fff" }}
+            >
+              <WhatsApp />
+            </Link>
           </li>
           <li>
-            <Instagram />
+            <Link
+              to="https://www.instagram.com/studioaudiomaker/"
+              style={{ textDecoration: "none", color: "#fff" }}
+            >
+              <Instagram />
+            </Link>
           </li>
           <li>
             <Facebook />
@@ -130,11 +153,7 @@ export const Header = () => {
           onKeyDown={toggleDrawer(false)}
         >
           <List>
-            <ListItemLink
-              label="Início"
-              to="/"
-              onClick={() => toggleDrawer}
-            />
+            <ListItemLink label="Início" to="/" onClick={() => toggleDrawer} />
             <ListItemLink
               label="Estrutura"
               to="/estrutura"
@@ -162,11 +181,17 @@ export const Header = () => {
             />
           </List>
           <List sx={{ display: "flex", gap: "1em", padding: "1em" }}>
-            <Link to="https://wa.me/5511963139042" style={{ textDecoration: "none", color: "#fff" }}>
-                <WhatsApp />
+            <Link
+              to="https://wa.me/5511963139042"
+              style={{ textDecoration: "none", color: "#fff" }}
+            >
+              <WhatsApp />
             </Link>
-            <Link to="https://www.instagram.com/studioaudiomaker/" style={{ textDecoration: "none", color: "#fff" }}>
-                <Instagram />
+            <Link
+              to="https://www.instagram.com/studioaudiomaker/"
+              style={{ textDecoration: "none", color: "#fff" }}
+            >
+              <Instagram />
             </Link>
             <Facebook />
             <YouTube />
