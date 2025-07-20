@@ -1,5 +1,6 @@
 import { Email, Facebook, Instagram, WhatsApp, YouTube } from "@mui/icons-material";
 import { Box, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
     return (
@@ -10,18 +11,27 @@ export const Footer = () => {
             </Box>
 
             <Box sx={{ display: "flex", gap: "2em", flexDirection: { xs: "column", md: "row" }, width: { xs: "100%", md: "auto" } }}>
+                <Link to={"/estrutura"} style={{ textDecoration: "none" }}>
+                    <Box sx={{ display: "flex", flexDirection: "column", gap: "1em" }}>
+                        <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#5B5C61" }}>Estrutura</Typography>
+                        <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#A7AAB5" }}>Equipamentos</Typography>
+                        <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#A7AAB5" }}>Sala Técnica</Typography>
+                        <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#A7AAB5" }}>Sala B</Typography>
+                    </Box>
+                </Link>
                 <Box sx={{ display: "flex", flexDirection: "column", gap: "1em" }}>
-                    <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#5B5C61" }}>Estrutura</Typography>
-                    <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#A7AAB5" }}>Equipamentos</Typography>
-                    <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#A7AAB5" }}>Instrumentos</Typography>
-                    <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#A7AAB5" }}>Sala Técnica</Typography>
-                    <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#A7AAB5" }}>Sala B</Typography>
-                </Box>
-                <Box sx={{ display: "flex", flexDirection: "column", gap: "1em" }}>
-                    <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#5B5C61" }}>Contato</Typography>
-                    <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#A7AAB5" }}>Para gravações</Typography>
-                    <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#A7AAB5" }}>Para ensaios</Typography>
-                    <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#A7AAB5" }}>Informações</Typography>
+                    <Link to="https://wa.me/5511993366542?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20gravações" style={{ textDecoration: "none" }}>
+                        <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#5B5C61" }}>Contato</Typography>
+                    </Link>
+                    <Link to="https://wa.me/5511993366542?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20gravações" style={{ textDecoration: "none" }}>
+                        <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#A7AAB5" }}>Para gravações</Typography>
+                    </Link>
+                    <Link to="/ensaiosegravacoes" style={{ textDecoration: "none" }}> 
+                        <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#A7AAB5" }}>Para ensaios</Typography>
+                    </Link>
+                    <Link to="https://wa.me/5511963139042" style={{ textDecoration: "none" }}>
+                        <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#A7AAB5" }}>Informações</Typography>
+                    </Link>
                 </Box>
                 <Box sx={{ display: "flex", flexDirection: "column", gap: "1em" }}>
                     <Typography sx={{ fontSize: "13px", fontFamily: "Poppins, sans-serif", color: "#5B5C61" }}>Redes sociais</Typography>

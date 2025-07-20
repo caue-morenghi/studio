@@ -36,11 +36,10 @@ export const Header = () => {
 
   const menuItems = [
     { nome: "Início", link: "/" },
-    { nome: "Estrutura", link: "estrutura" },
-    { nome: "Ensaios e Gravações", link: "ensaiosegravacoes" },
-    { nome: "Preços", link: "precos" },
-    { nome: "Clientes", link: "clientes" },
-    { nome: "Instrumentos", link: "instrumentos" },
+    { nome: "Estrutura", link: "/estrutura" },
+    { nome: "Ensaios e Gravações", link: "/ensaiosegravacoes" },
+    { nome: "Preços", link: "/precos" },
+    // { nome: "Clientes", link: "/clientes" }
   ];
 
   return (
@@ -120,7 +119,7 @@ export const Header = () => {
           </li>
           <li>
             <Link
-              to="https://www.instagram.com/studioaudiomaker/"
+              to="https://www.instagram.com/audiomakersbc/"
               style={{ textDecoration: "none", color: "#fff" }}
             >
               <Instagram />
@@ -169,16 +168,11 @@ export const Header = () => {
               to="/precos"
               onClick={() => toggleDrawer}
             />
-            <ListItemLink
+            {/* <ListItemLink
               label="Clientes"
               to="/clientes"
               onClick={() => toggleDrawer}
-            />
-            <ListItemLink
-              label="Instrumentos"
-              to="/instrumentos"
-              onClick={() => toggleDrawer}
-            />
+            /> */}
           </List>
           <List sx={{ display: "flex", gap: "1em", padding: "1em" }}>
             <Link
@@ -188,7 +182,7 @@ export const Header = () => {
               <WhatsApp />
             </Link>
             <Link
-              to="https://www.instagram.com/studioaudiomaker/"
+              to="https://www.instagram.com/audiomakersbc/"
               style={{ textDecoration: "none", color: "#fff" }}
             >
               <Instagram />

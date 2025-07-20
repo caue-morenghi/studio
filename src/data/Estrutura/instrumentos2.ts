@@ -5,8 +5,8 @@ export const instrumentos: CaixaProps[] = [
     nome: "Guitarra Fender Squier Stratocaster",
     descricao:
       "Guitarra 1",
-    // img: "/assets/Estudio/IMG_8717.jpg",
-    img: "/assets/Estudio/ney.jpeg",
+    img: "/assets/Estudio/IMG_8720.jpg"
+    // img: "/assets/Estudio/ney.jpeg",
   },
   {
     nome: "Guitarra Tagima Vulcan",
@@ -61,13 +61,13 @@ export const instrumentos: CaixaProps[] = [
     nome: "Bateria 1",
     descricao:
       "Bateria 1",
-    img: "/assets/Estudio/IMG_8934.jpg",
+    img: "/assets/Estudio/IMG_4334.jpg",
   },
   {
     nome: "Bateria 2",
     descricao:
       "Bateria 2",
-    img: "/assets/Estudio/IMG_8681.jpg",
+    img: "/assets/Estudio/IMG_8934.jpg",
   },
   {
     nome: "Viola Caipira Del Vecchio",

@@ -11,6 +11,7 @@ import { amplificadores } from "../data/Estrutura/amplificadores";
 import { Caixa } from "../components/Estrutura/Caixa";
 import { instrumentos } from "../data/Estrutura/instrumentos2";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import { Footer } from "../components/Home/Footer";
 
 export const Estrutura = () => {
   return (
@@ -18,60 +19,60 @@ export const Estrutura = () => {
       <Header />
       <Box
         sx={{
-          padding: "4em",
+          padding: { xs: "2em 1em", md: "4em" },
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          flexDirection: "column",
+          gap: 2,
         }}
       >
-        <span
-          style={{
+        <Box
+          sx={{
             display: "flex",
+            flexDirection: { xs: "column", md: "row" },
             alignItems: "center",
             gap: "1em",
-            flexDirection: "column",
           }}
         >
-          <span style={{ display: "flex", alignItems: "center", gap: "1em" }}>
-            <Typography
-              sx={{
-                color: "#fff",
-                fontWeight: "600",
-                fontSize: { xs: "40px", md: "60px" },
-                fontFamily: "Poppins, sans-serif",
-              }}
-            >
-              NOSSA
-            </Typography>
-            <Typography
-              sx={{
-                color: "#03A9F4",
-                fontWeight: "600",
-                fontSize: { xs: "40px", md: "60px" },
-                fontFamily: "Poppins, sans-serif",
-              }}
-            >
-              ESTRUTURA
-            </Typography>
-          </span>
           <Typography
             sx={{
+              color: "#fff",
+              fontWeight: "600",
+              fontSize: { xs: "30px", md: "60px" },
               fontFamily: "Poppins, sans-serif",
-              width: "60%",
-              textAlign: "center",
-              color: "#B4BABC",
             }}
           >
-            Utilizada para ensaios e gravações, a sala técnica foi construída em
-            um grande espaço de Xm2, possibilitando o uso para artistas ou
-            bandas de pequeno a grande porte.
+            NOSSA
           </Typography>
-        </span>
+          <Typography
+            sx={{
+              color: "#03A9F4",
+              fontWeight: "600",
+              fontSize: { xs: "30px", md: "60px" },
+              fontFamily: "Poppins, sans-serif",
+            }}
+          >
+            ESTRUTURA
+          </Typography>
+        </Box>
+        <Typography
+          sx={{
+            fontFamily: "Poppins, sans-serif",
+            width: { xs: "100%", md: "60%" },
+            textAlign: "center",
+            color: "#B4BABC",
+          }}
+        >
+          Utilizada para ensaios e gravações, a sala técnica foi construída em
+          um grande espaço, possibilitando o uso para artistas ou bandas de
+          pequeno a grande porte.
+        </Typography>
       </Box>
-      
+
       <Accordion
         sx={{
-          padding: "2em 20em",
+          padding: { xs: "2em 1em", md: "2em 20em" },
           backgroundColor: "#151A27",
           border: "none",
           boxShadow: "none",
@@ -126,7 +127,7 @@ export const Estrutura = () => {
 
       <Accordion
         sx={{
-          padding: "2em 20em",
+          padding: { xs: "2em 1em", md: "2em 20em" },
           backgroundColor: "#151A27",
           border: "none",
           boxShadow: "none",
@@ -182,7 +183,7 @@ export const Estrutura = () => {
 
       <Accordion
         sx={{
-          padding: "2em 20em",
+          padding: { xs: "2em 1em", md: "2em 20em" },
           backgroundColor: "#151A27",
           border: "none",
           boxShadow: "none",
@@ -231,7 +232,7 @@ export const Estrutura = () => {
 
       <Accordion
         sx={{
-          padding: "2em 20em",
+          padding: { xs: "2em 1em", md: "2em 20em" },
           backgroundColor: "#151A27",
           border: "none",
           boxShadow: "none",
@@ -280,7 +281,7 @@ export const Estrutura = () => {
 
       <Accordion
         sx={{
-          padding: "2em 20em",
+          padding: { xs: "2em 1em", md: "2em 20em" },
           backgroundColor: "#151A27",
           border: "none",
           boxShadow: "none",
@@ -329,7 +330,7 @@ export const Estrutura = () => {
 
       <Accordion
         sx={{
-          padding: "2em 20em",
+          padding: { xs: "2em 1em", md: "2em 20em" },
           backgroundColor: "#151A27",
           border: "none",
           boxShadow: "none",
@@ -358,7 +359,7 @@ export const Estrutura = () => {
                 fontFamily: "Poppins, sans-serif",
               }}
             >
-              Trataento Acústico
+              Tratamento Acústico
             </Typography>
           </Box>
         </AccordionSummary>
@@ -371,10 +372,13 @@ export const Estrutura = () => {
               justifyContent: "center",
             }}
           >
-            {/* Insira aqui o conteúdo/itens referentes a Trataento Acústico */}
+            {/* Insira aqui o conteúdo/itens referentes a Tratamento Acústico */}
           </Box>
         </AccordionDetails>
       </Accordion>
+      <Footer />
     </Box>
   );
 };
+
+export default Estrutura;

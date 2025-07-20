@@ -48,7 +48,7 @@ export const Agende = () => {
                             </Typography>
                         </Box>
                     </Link>
-                    <Link style={{ textDecoration: "none" }} to="https://instagram.com/studioaudiomaker">
+                    <Link style={{ textDecoration: "none" }} to="https://instagram.com/audiomakersbc">
                         <Box sx={{ display: "flex", gap: ".5em", flexDirection: { xs: "column", md: "row" }, alignItems: "center" }}>
                             <Instagram sx={{ color: "#fff" }} />
                             <Typography
