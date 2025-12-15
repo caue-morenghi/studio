@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import imagem_central from "../../../data/assets/Hero.jpg";
+import imagem_central from "../../../data/assets/herp4.jpg";
 import { Header } from "./Header";
 import { Hero } from "./Hero";
 

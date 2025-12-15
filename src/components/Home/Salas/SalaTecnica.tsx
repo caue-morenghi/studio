@@ -5,10 +5,20 @@ import img3 from "../../../data/assets/sala13.png";
 import img4 from "../../../data/assets/sala14.png";
 import { Check } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+const MotionBox = motion(Box);
 
 export const SalaTecnica = () => {
   return (
-    <Box
+    <MotionBox
+      // --- Configurações da Animação ---
+      initial={{ opacity: 0, y: 50 }} // Começa invisível e 50px para baixo
+      whileInView={{ opacity: 1, y: 0 }} // Fica visível e na posição original
+      viewport={{ once: true, amount: 0.3 }} // Acontece 1 vez, quando 30% do item aparecer
+      transition={{ duration: 0.8, ease: "easeOut" }} // Duração de 0.8s suave
+      // ----------------------------------
+
       width="100%"
       sx={{
         padding: { xs: "1em", md: "5em" },
@@ -124,6 +134,6 @@ export const SalaTecnica = () => {
           </button>
         </Link>
       </Box>
-    </Box>
+    </MotionBox>
   );
 };
