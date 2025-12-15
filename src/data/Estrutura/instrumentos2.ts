@@ -12,7 +12,7 @@ export const instrumentos: CaixaProps[] = [
     nome: "Guitarra Tagima Vulcan",
     descricao:
       "Guitarra 2", 
-    img: "/assets/Estudio/IMG_8727.jpg",
+    img: "/assets/Estudio/IMG_4387.jpg",
   },
   {
     nome: "Guitarra EVH Frankenstrat",
@@ -20,18 +20,18 @@ export const instrumentos: CaixaProps[] = [
       "Guitarra 3",
     img: "/assets/Estudio/IMG_8941.jpg",
   },
-  {
-    nome: "Guitarra SG",
-    descricao:
-      'Guitarra 4',
-    img: "/assets/Estudio/IMG_8687.jpg",
-  },
-  {
-    nome: "Guitarra Fender Squier Stratocaster",
-    descricao:
-      'Guitarra 5',
-    img: "/assets/Estudio/IMG_8684.jpg",
-  },
+  // {
+  //   nome: "Guitarra SG",
+  //   descricao:
+  //     'Guitarra 4',
+  //   img: "/assets/Estudio/IMG_8687.jpg",
+  // },
+  // {
+  //   nome: "Guitarra Fender Squier Stratocaster",
+  //   descricao:
+  //     'Guitarra 5',
+  //   img: "/assets/Estudio/IMG_8684.jpg",
+  // },
   {
     nome: "Baixo Stringberg CLB25A 5 Cordas",
     descricao:
@@ -42,20 +42,20 @@ export const instrumentos: CaixaProps[] = [
     nome: "Teclado Yamaha PSS-F30",
     descricao:
       'Teclado 1',
-    img: "/assets/Estudio/IMG_8682.jpg",
+    img: "",
   },
 
   {
     nome: "Violão 7 Cordas Rozini Pro",
     descricao:
       "Violão 1",
-    img: "/assets/Estudio/IMG_8681.jpg",
+    img: "",
   },
   {
     nome: "Violão de Aço Aria FET-DLX",
     descricao:
       "Violão 2",
-    img: "/assets/Estudio/IMG_8681.jpg",
+    img: "/assets/Estudio/IMG_4388.jpg",
   },
   {
     nome: "Bateria 1",
@@ -70,15 +70,21 @@ export const instrumentos: CaixaProps[] = [
     img: "/assets/Estudio/IMG_8934.jpg",
   },
   {
+    nome: "Pratos de Bateria",
+    descricao:
+      "Pratos de Bateria",
+    img: "",
+  },
+  {
     nome: "Viola Caipira Del Vecchio",
     descricao:
       "Viola 1",
     img: "/assets/Estudio/IMG_8946.jpg",
   },
   {
-    nome: "Cavaquinho Giannini",
+    nome: "Cavaquinho Giannini",  
     descricao:
       "Cavaquinho",
-    img: "/assets/Estudio/IMG_8681.jpg",
+    img: "",
   } 
 ];

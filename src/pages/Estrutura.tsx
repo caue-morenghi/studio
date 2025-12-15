@@ -10,8 +10,14 @@ import { Speaker } from "@mui/icons-material";
 import { amplificadores } from "../data/Estrutura/amplificadores";
 import { Caixa } from "../components/Estrutura/Caixa";
 import { instrumentos } from "../data/Estrutura/instrumentos2";
+import { equipamentosGravacao } from "../data/Estrutura/equipamentosGravacao";
+import { microfones } from "../data/Estrutura/microfones";
+import { acessorios } from "../data/Estrutura/acessorios";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { Footer } from "../components/Home/Footer";
+import { espacos } from "../data/Estrutura/espacos";
+import { salaA } from "../data/Estrutura/salaA";
+import { salaB } from "../data/Estrutura/salaB";
 
 export const Estrutura = () => {
   return (
@@ -69,6 +75,118 @@ export const Estrutura = () => {
           pequeno a grande porte.
         </Typography>
       </Box>
+
+      <Accordion
+        sx={{
+          padding: { xs: "2em 1em", md: "2em 20em" },
+          backgroundColor: "#151A27",
+          border: "none",
+          boxShadow: "none",
+          marginTop: "2em",
+        }}
+      >
+        <AccordionSummary
+          expandIcon={<ArrowDownwardIcon sx={{ color: "#03A9F4" }} />}
+        >
+          <Box sx={{ display: "flex", alignItems: "center", gap: "1em" }}>
+            <Box
+              sx={{
+                padding: "1em",
+                backgroundColor: "#1E1E2F",
+                borderRadius: "8px",
+                ":hover": { backgroundColor: "#03A9F4" },
+              }}
+            >
+              <Speaker sx={{ fontSize: "30px", color: "#03A9F4" }} />
+            </Box>
+            <Typography
+              sx={{
+                color: "#fff",
+                fontWeight: "600",
+                fontSize: { xs: "20px", md: "30px" },
+                fontFamily: "Poppins, sans-serif",
+              }}
+            >
+              Sala A (Sala Técnica)
+            </Typography>
+          </Box>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "2em",
+              justifyContent: "center",
+            }}
+          >
+            {salaA.map((item) => (
+              <Caixa
+                key={item.nome}
+                nome={item.nome}
+                descricao={item.descricao}
+                img={item.img}
+              />
+            ))}
+          </Box>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion
+        sx={{
+          padding: { xs: "2em 1em", md: "2em 20em" },
+          backgroundColor: "#151A27",
+          border: "none",
+          boxShadow: "none",
+          marginTop: "2em",
+        }}
+      >
+        <AccordionSummary
+          expandIcon={<ArrowDownwardIcon sx={{ color: "#03A9F4" }} />}
+        >
+          <Box sx={{ display: "flex", alignItems: "center", gap: "1em" }}>
+            <Box
+              sx={{
+                padding: "1em",
+                backgroundColor: "#1E1E2F",
+                borderRadius: "8px",
+                ":hover": { backgroundColor: "#03A9F4" },
+              }}
+            >
+              <Speaker sx={{ fontSize: "30px", color: "#03A9F4" }} />
+            </Box>
+            <Typography
+              sx={{
+                color: "#fff",
+                fontWeight: "600",
+                fontSize: { xs: "20px", md: "30px" },
+                fontFamily: "Poppins, sans-serif",
+              }}
+            >
+              Sala B
+            </Typography>
+          </Box>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "2em",
+              justifyContent: "center",
+            }}
+          >
+            {salaB.map((item) => (
+              <Caixa
+                key={item.nome}
+                nome={item.nome}
+                descricao={item.descricao}
+                img={item.img}
+              />
+            ))}
+          </Box>
+        </AccordionDetails>
+      </Accordion>
 
       <Accordion
         sx={{
@@ -225,7 +343,14 @@ export const Estrutura = () => {
               justifyContent: "center",
             }}
           >
-            {/* Insira aqui o conteúdo/itens referentes a Equipamentos de Gravação */}
+            {equipamentosGravacao.map((item) => (
+              <Caixa
+                key={item.nome}
+                nome={item.nome}
+                descricao={item.descricao}
+                img={item.img}
+              />
+            ))}
           </Box>
         </AccordionDetails>
       </Accordion>
@@ -274,7 +399,14 @@ export const Estrutura = () => {
               justifyContent: "center",
             }}
           >
-            {/* Insira aqui o conteúdo/itens referentes a Microfones */}
+            {microfones.map((item) => (
+              <Caixa
+                key={item.nome}
+                nome={item.nome}
+                descricao={item.descricao}
+                img={item.img}
+              />
+            ))}
           </Box>
         </AccordionDetails>
       </Accordion>
@@ -323,7 +455,14 @@ export const Estrutura = () => {
               justifyContent: "center",
             }}
           >
-            {/* Insira aqui o conteúdo/itens referentes a Acessórios e Suportes */}
+            {acessorios.map((item) => (
+              <Caixa
+                key={item.nome}
+                nome={item.nome}
+                descricao={item.descricao}
+                img={item.img}
+              />
+            ))}
           </Box>
         </AccordionDetails>
       </Accordion>
@@ -359,7 +498,7 @@ export const Estrutura = () => {
                 fontFamily: "Poppins, sans-serif",
               }}
             >
-              Tratamento Acústico
+              Espaços Gerais
             </Typography>
           </Box>
         </AccordionSummary>
@@ -372,7 +511,14 @@ export const Estrutura = () => {
               justifyContent: "center",
             }}
           >
-            {/* Insira aqui o conteúdo/itens referentes a Tratamento Acústico */}
+            {espacos.map((item) => (
+              <Caixa
+                key={item.nome}
+                nome={item.nome}
+                descricao={item.descricao}
+                img={item.img}
+              />
+            ))}
           </Box>
         </AccordionDetails>
       </Accordion>

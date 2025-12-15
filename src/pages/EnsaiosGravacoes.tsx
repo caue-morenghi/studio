@@ -6,13 +6,13 @@ import {
   Grid,
   TextField,
   FormControl,
-  InputLabel,
   Select,
   MenuItem,
   Button,
 } from "@mui/material";
 import { Header } from "../components/Home/Inicio/Header";
 import { Footer } from "../components/Home/Footer";
+import { WhatsApp } from "@mui/icons-material";
 
 type FormData = {
   dateTime: string;
@@ -38,7 +38,8 @@ export const EnsaiosEGravacoes = () => {
   const instrumentRental = watch("instrumentRental");
   const selectedInstruments = watch("instruments");
 
-  const pricePerHour = peopleCount <= 8 ? 60 : 70;
+  // Para 1 a 8 pessoas o valor é de R$50,00/hora; para 9 ou mais, R$60,00/hora.
+  const pricePerHour = peopleCount <= 8 ? 50 : 60;
   const basePrice = pricePerHour * numberOfHours;
   const instrumentsAdditional =
     instrumentRental === "sim" && selectedInstruments
@@ -47,20 +48,23 @@ export const EnsaiosEGravacoes = () => {
   const total = basePrice + instrumentsAdditional;
 
   const instrumentOptions = [
-    "Bateria",
-    "Guitarra",
-    "Baixo",
-    "Teclado",
-    "Microfone",
+    "Pratos de bateria",
+    "Guitarra Fender Squier Stratocaster",
+    "Guitarra Tagima Vulcan",
+    "Guitarra EVH Frankenstrat",
+    "Baixo Stringberg CLB25A 5 Cordas",
+    "Teclado Yamaha PSS-F30",
+    "Violão 7 Cordas Rozini Pro",
+    "Violão de Aço Aria FET-DLX",
   ];
 
   const onSubmit = (data: FormData) => {
     const msg = `Ensaio:
-Data e hora: ${new Date(data.dateTime).toLocaleString()}; 
-Número de horas: ${data.numberOfHours}; 
-Número de pessoas: ${data.peopleCount}; 
-Aluguel de instrumento: ${data.instrumentRental}; 
-Instrumentos: ${data.instruments.join(", ")}; 
+Data e hora: ${new Date(data.dateTime).toLocaleString()};
+Número de horas: ${data.numberOfHours};
+Número de pessoas: ${data.peopleCount};
+Aluguel de instrumento: ${data.instrumentRental};
+Instrumentos: ${data.instruments.join(", ")};
 Total: R$${total.toFixed(2)}`;
     window.open(
       `https://wa.me/5511963139042?text=${encodeURIComponent(msg)}`,
@@ -107,12 +111,32 @@ Total: R$${total.toFixed(2)}`;
                 Ensaio Individual: R$50,00 / hora
               </Typography>
               <Typography sx={{ color: "#B4BABC", mb: 1 }}>
-                Ensaio em Grupo: R$60,00 / hora
+                Ensaio em Grupo: R$50,00 / hora
+              </Typography>
+              <Typography sx={{ color: "#B4BABC", mb: 1 }}>
+                Ensaio em Grupo Grande: R$60,00 / hora
+              </Typography>
+              <Typography sx={{ color: "#B4BABC", mb: 1 }}>
+                Aluguel de instrumento: R$30,00 por ensaio
               </Typography>
               <Typography sx={{ color: "#B4BABC" }}>
-                Ensaio em Grupo Grande: R$70,00 / hora
+                Pacote promocional: +55 (11) 96313-9042
               </Typography>
             </Box>
+            <Button
+              type="submit"
+              sx={{
+                backgroundColor: "#03A9F4",
+                color: "#fff",
+                "&:hover": { backgroundColor: "#0288D1" },
+                mt: 2,
+                padding: ".5em 2em",
+              }}
+              endIcon={<WhatsApp />}
+              href="https://wa.me/5511963139042?text=Gostaria de agendar um ensaio"
+            >
+              OU Agendar diretamente no WhatsApp
+            </Button>
           </Grid>
           <Grid item xs={12} md={6}>
             <Box
@@ -121,9 +145,7 @@ Total: R$${total.toFixed(2)}`;
               sx={{ display: "flex", flexDirection: "column", gap: "1.5em" }}
             >
               <Box>
-                <Typography
-                  sx={{ color: "#fff", fontWeight: 600, mb: 1 }}
-                >
+                <Typography sx={{ color: "#fff", fontWeight: 600, mb: 1 }}>
                   Data e Hora
                 </Typography>
                 <Controller
@@ -136,20 +158,16 @@ Total: R$${total.toFixed(2)}`;
                       InputLabelProps={{ shrink: true }}
                       fullWidth
                       size="small"
+                      required
                       InputProps={{
-                        sx: {
-                          backgroundColor: "#fff",
-                          borderRadius: "4px",
-                        },
+                        sx: { backgroundColor: "#fff", borderRadius: "4px" },
                       }}
                     />
                   )}
                 />
               </Box>
               <Box>
-                <Typography
-                  sx={{ color: "#fff", fontWeight: 600, mb: 1 }}
-                >
+                <Typography sx={{ color: "#fff", fontWeight: 600, mb: 1 }}>
                   Número de Horas
                 </Typography>
                 <Controller
@@ -160,9 +178,9 @@ Total: R$${total.toFixed(2)}`;
                       fullWidth
                       size="small"
                       sx={{ backgroundColor: "#fff", borderRadius: "4px" }}
+                      required
                     >
-                      <InputLabel>Número de horas</InputLabel>
-                      <Select {...field} label="Número de horas">
+                      <Select {...field}>
                         {[1, 2, 3, 4, 5].map((h) => (
                           <MenuItem key={h} value={h}>
                             {h} hora{h > 1 && "s"}
@@ -174,9 +192,7 @@ Total: R$${total.toFixed(2)}`;
                 />
               </Box>
               <Box>
-                <Typography
-                  sx={{ color: "#fff", fontWeight: 600, mb: 1 }}
-                >
+                <Typography sx={{ color: "#fff", fontWeight: 600, mb: 1 }}>
                   Número de Pessoas
                 </Typography>
                 <Controller
@@ -187,23 +203,23 @@ Total: R$${total.toFixed(2)}`;
                       fullWidth
                       size="small"
                       sx={{ backgroundColor: "#fff", borderRadius: "4px" }}
+                      required
                     >
-                      <InputLabel>Número de pessoas</InputLabel>
                       <Select {...field} label="Número de pessoas">
-                        {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
-                          <MenuItem key={num} value={num}>
-                            {num} pessoa{num > 1 && "s"}
-                          </MenuItem>
-                        ))}
+                        {Array.from({ length: 20 }, (_, i) => i + 1).map(
+                          (num) => (
+                            <MenuItem key={num} value={num}>
+                              {num} pessoa{num > 1 && "s"}
+                            </MenuItem>
+                          )
+                        )}
                       </Select>
                     </FormControl>
                   )}
                 />
               </Box>
               <Box>
-                <Typography
-                  sx={{ color: "#fff", fontWeight: 600, mb: 1 }}
-                >
+                <Typography sx={{ color: "#fff", fontWeight: 600, mb: 1 }}>
                   Aluguel de Instrumento
                 </Typography>
                 <Controller
@@ -214,8 +230,8 @@ Total: R$${total.toFixed(2)}`;
                       fullWidth
                       size="small"
                       sx={{ backgroundColor: "#fff", borderRadius: "4px" }}
+                      required
                     >
-                      <InputLabel>Aluguel de instrumento</InputLabel>
                       <Select {...field} label="Aluguel de instrumento">
                         <MenuItem value="sim">Sim</MenuItem>
                         <MenuItem value="nao">Não</MenuItem>
@@ -226,9 +242,7 @@ Total: R$${total.toFixed(2)}`;
               </Box>
               {instrumentRental === "sim" && (
                 <Box>
-                  <Typography
-                    sx={{ color: "#fff", fontWeight: 600, mb: 1 }}
-                  >
+                  <Typography sx={{ color: "#fff", fontWeight: 600, mb: 1 }}>
                     Instrumentos para Aluguel
                   </Typography>
                   <Controller
@@ -239,8 +253,8 @@ Total: R$${total.toFixed(2)}`;
                         fullWidth
                         size="small"
                         sx={{ backgroundColor: "#fff", borderRadius: "4px" }}
+                        required
                       >
-                        <InputLabel>Instrumentos</InputLabel>
                         <Select {...field} multiple label="Instrumentos">
                           {instrumentOptions.map((inst) => (
                             <MenuItem key={inst} value={inst}>
@@ -260,9 +274,7 @@ Total: R$${total.toFixed(2)}`;
                   borderRadius: "8px",
                 }}
               >
-                <Typography
-                  sx={{ color: "#fff", fontWeight: 600 }}
-                >
+                <Typography sx={{ color: "#fff", fontWeight: 600 }}>
                   Total: R${total.toFixed(2)}
                 </Typography>
               </Box>
@@ -273,12 +285,43 @@ Total: R$${total.toFixed(2)}`;
                   color: "#fff",
                   "&:hover": { backgroundColor: "#0288D1" },
                 }}
+                endIcon={<WhatsApp />}
               >
                 Agendar
               </Button>
             </Box>
           </Grid>
         </Grid>
+
+        {/* Seção de Gravações */}
+        <Box sx={{ mt: 15 }}>
+          <Typography
+            sx={{
+              color: "#fff",
+              fontWeight: 600,
+              fontSize: { xs: "2.5rem", md: "4rem" },
+              mb: 4,
+              fontFamily: "Poppins, sans-serif",
+              textAlign: "left",
+            }}
+          >
+            Gravações
+          </Typography>
+          <Box sx={{ display: "flex", justifyContent: "left" }}>
+            <Button
+              sx={{
+                backgroundColor: "#03A9F4",
+                color: "#fff",
+                "&:hover": { backgroundColor: "#0288D1" },
+                padding: ".5em 2em",
+              }}
+              endIcon={<WhatsApp />}
+              href="https://wa.me/551193366542?text=Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20grava%C3%A7%C3%A3o"
+            >
+              Orçamento de gravação
+            </Button>
+          </Box>
+        </Box>
       </Box>
       <Footer />
     </Box>

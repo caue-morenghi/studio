@@ -2,6 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { Header } from "../components/Home/Inicio/Header";
 import { Verified } from "@mui/icons-material";
 import { Footer } from "../components/Home/Footer";
+import { Link } from "react-router-dom";
 
 type PriceCardProps = {
   title: string;
@@ -12,7 +13,14 @@ type PriceCardProps = {
   popular?: boolean;
 };
 
-const PriceCard = ({ title, desc, price, per, features, popular }: PriceCardProps) => (
+const PriceCard = ({
+  title,
+  desc,
+  price,
+  per,
+  features,
+  popular,
+}: PriceCardProps) => (
   <Box
     sx={{
       position: popular ? "relative" : undefined,
@@ -101,7 +109,10 @@ const PriceCard = ({ title, desc, price, per, features, popular }: PriceCardProp
       </Box>
       <Box sx={{ display: "flex", flexDirection: "column", gap: "1em" }}>
         {features.map((f) => (
-          <Box key={f} sx={{ display: "flex", alignItems: "center", gap: "0.5em" }}>
+          <Box
+            key={f}
+            sx={{ display: "flex", alignItems: "center", gap: "0.5em" }}
+          >
             <Verified sx={{ color: "#03A9F4" }} />
             <Typography
               sx={{
@@ -117,17 +128,19 @@ const PriceCard = ({ title, desc, price, per, features, popular }: PriceCardProp
         ))}
       </Box>
     </Box>
-    <Button
-      sx={{
-        backgroundColor: "transparent",
-        "&:hover": { backgroundColor: "#0288D1", color: "#fff" },
-        border: "1px solid #0288d1",
-        fontWeight: 600,
-        color: "#0288d1",
-      }}
-    >
-      Agende Agora
-    </Button>
+    <Link to="/ensaiosegravacoes">
+      <Button
+        sx={{
+          backgroundColor: "transparent",
+          "&:hover": { backgroundColor: "#0288D1", color: "#fff" },
+          border: "1px solid #0288d1",
+          fontWeight: 600,
+          color: "#0288d1",
+        }}
+      >
+        Agende Agora
+      </Button>
+    </Link>
   </Box>
 );
 
@@ -140,7 +153,14 @@ type PromoCardProps = {
   features: string[];
 };
 
-const PromoCard = ({ title, discount, desc, originalPrice, price, features }: PromoCardProps) => (
+const PromoCard = ({
+  title,
+  discount,
+  desc,
+  originalPrice,
+  price,
+  features,
+}: PromoCardProps) => (
   <Box
     sx={{
       backgroundColor: "rgba(64, 70, 87, 0.5)",
@@ -155,7 +175,14 @@ const PromoCard = ({ title, discount, desc, originalPrice, price, features }: Pr
       justifyContent: "space-between",
     }}
   >
-    <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: "100%",
+      }}
+    >
       <Typography
         sx={{
           color: "#fff",
@@ -213,7 +240,10 @@ const PromoCard = ({ title, discount, desc, originalPrice, price, features }: Pr
     </Box>
     <Box sx={{ display: "flex", flexDirection: "column", gap: "1em" }}>
       {features.map((f) => (
-        <Box key={f} sx={{ display: "flex", alignItems: "center", gap: "0.5em" }}>
+        <Box
+          key={f}
+          sx={{ display: "flex", alignItems: "center", gap: "0.5em" }}
+        >
           <Verified sx={{ color: "#03A9F4" }} />
           <Typography
             sx={{
@@ -228,17 +258,19 @@ const PromoCard = ({ title, discount, desc, originalPrice, price, features }: Pr
         </Box>
       ))}
     </Box>
-    <Button
-      sx={{
-        backgroundColor: "transparent",
-        "&:hover": { backgroundColor: "#0288D1", color: "#fff" },
-        border: "1px solid #0288d1",
-        fontWeight: 600,
-        color: "#0288d1",
-      }}
-    >
-      Agende Agora
-    </Button>
+    <Link to="/ensaiosegravacoes">
+      <Button
+        sx={{
+          backgroundColor: "transparent",
+          "&:hover": { backgroundColor: "#0288D1", color: "#fff" },
+          border: "1px solid #0288d1",
+          fontWeight: 600,
+          color: "#0288d1",
+        }}
+      >
+        Agende Agora
+      </Button>
+    </Link>
   </Box>
 );
 
@@ -260,7 +292,7 @@ export const Precos = () => {
     {
       title: "Ensaio em Grupo",
       desc: "Para grupos pequenos de músicos que querem ensaiar juntos.",
-      price: "R$60,00",
+      price: "R$50,00",
       per: "/hora",
       features: [
         "Sala completa de ensaio",
@@ -274,7 +306,7 @@ export const Precos = () => {
     {
       title: "Ensaio em Grupo Grande",
       desc: "Para grupos maiores de músicos que querem ensaiar juntos.",
-      price: "R$70,00",
+      price: "R$60,00",
       per: "/hora",
       features: [
         "Sala completa de ensaio",
@@ -288,18 +320,18 @@ export const Precos = () => {
   const promoOptions: PromoCardProps[] = [
     {
       title: "4 ensaios (8h)",
-      discount: "-25%",
-      desc: "4 ensaios com 2 horas cada",
-      originalPrice: "R$70,00",
-      price: "R$70,00",
+      discount: "-10%",
+      desc: "4 ensaios com 2 horas cada - Individual ou Grupo Pequeno",
+      originalPrice: "R$400,00",
+      price: "R$360,00",
       features: ["Flexibilidade de horários", "Desconto"],
     },
     {
       title: "4 ensaios (8h)",
-      discount: "-25%",
-      desc: "4 ensaios com 2 horas cada",
-      originalPrice: "R$70,00",
-      price: "R$70,00",
+      discount: "-10%",
+      desc: "4 ensaios com 2 horas cada - Grupo Grande",
+      originalPrice: "R$480,00",
+      price: "R$432,00",
       features: ["Flexibilidade de horários", "Desconto"],
     },
   ];
@@ -356,7 +388,8 @@ export const Precos = () => {
               fontSize: { xs: "1rem", md: "1.125rem" },
             }}
           >
-            O melhor custo-benefício do ABC e região: Equipamentos de ponta com preços acessíveis.
+            O melhor custo-benefício do ABC e região: Equipamentos de ponta com
+            preços acessíveis.
           </Typography>
         </Box>
       </Box>
@@ -418,7 +451,7 @@ export const Precos = () => {
           }}
         >
           {promoOptions.map((opt) => (
-            <Box key={opt.title} sx={{ width: { xs: "100%", md: "20%" } }}>
+            <Box key={opt.title} sx={{ width: { xs: "100%", md: "25%" } }}>
               <PromoCard {...opt} />
             </Box>
           ))}
